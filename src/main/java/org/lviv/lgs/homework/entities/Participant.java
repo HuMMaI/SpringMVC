@@ -1,4 +1,4 @@
-package org.lviv.lgs.homework;
+package org.lviv.lgs.homework.entities;
 
 import javax.persistence.*;
 
@@ -18,6 +18,9 @@ public class Participant {
     @Column(name = "primary_skill")
     private String primarySkill;
 
+    @Column(name = "cover_id")
+    private String coverId;
+
     public Participant() {
     }
 
@@ -31,6 +34,7 @@ public class Participant {
         private String email;
         private String level;
         private String primarySkill;
+        private String coverId;
 
         public Builder setId(int id){
             this.id = id;
@@ -57,6 +61,11 @@ public class Participant {
             return this;
         }
 
+        public Builder setCoverId(String coverId){
+            this.coverId = coverId;
+            return this;
+        }
+
         public Participant build(){
             Participant participant = new Participant();
             participant.setId(id);
@@ -64,6 +73,7 @@ public class Participant {
             participant.setEmail(email);
             participant.setLevel(level);
             participant.setPrimarySkill(primarySkill);
+            participant.setCoverId(coverId);
 
             return participant;
         }
@@ -109,6 +119,14 @@ public class Participant {
         this.primarySkill = primarySkill;
     }
 
+    public String getCoverId() {
+        return coverId;
+    }
+
+    public void setCoverId(String coverId) {
+        this.coverId = coverId;
+    }
+
     @Override
     public String toString() {
         return "Participant{" +
@@ -117,6 +135,7 @@ public class Participant {
                 ", email='" + email + '\'' +
                 ", level='" + level + '\'' +
                 ", primarySkill='" + primarySkill + '\'' +
+                ", coverId='" + coverId + '\'' +
                 '}';
     }
 }

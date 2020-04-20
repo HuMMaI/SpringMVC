@@ -1,5 +1,7 @@
-package org.lviv.lgs.homework;
+package org.lviv.lgs.homework.services;
 
+import org.lviv.lgs.homework.entities.Participant;
+import org.lviv.lgs.homework.repositories.ParticipantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

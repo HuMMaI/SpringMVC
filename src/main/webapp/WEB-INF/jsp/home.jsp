@@ -26,6 +26,7 @@
             <th scope="col">Email</th>
             <th scope="col">Level</th>
             <th scope="col">Primary skill</th>
+            <th scope="col">Cover</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
         </tr>

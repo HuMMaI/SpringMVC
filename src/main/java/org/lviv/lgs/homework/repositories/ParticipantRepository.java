@@ -1,5 +1,6 @@
-package org.lviv.lgs.homework;
+package org.lviv.lgs.homework.repositories;
 
+import org.lviv.lgs.homework.entities.Participant;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,7 +1,7 @@
 package org.lviv.lgs.homework.controllers;
 
-import org.lviv.lgs.homework.Participant;
-import org.lviv.lgs.homework.ParticipantService;
+import org.lviv.lgs.homework.entities.Participant;
+import org.lviv.lgs.homework.services.ParticipantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
