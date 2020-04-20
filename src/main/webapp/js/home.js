@@ -9,6 +9,7 @@ $.get("api/home")
                 "<td>" + item.email + "</td>" +
                 "<td>" + item.level + "</td>" +
                 "<td>" + item.primarySkill + "</td>" +
+                "<td>" + "<img src='/BookClub/participant-cover-files/download/" + item.coverId + "' width='50px'>" + "</td>" +
                 "<td>" +
                 "<button type=\"button\" class=\"btn btn-outline-warning btn-xs edit-participant\" participant-id='" + item.id + "'>" +
                 "<i class=\"fas fa-edit\" aria-hidden=\"true\"></i>" +
