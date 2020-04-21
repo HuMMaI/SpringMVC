@@ -1,0 +1,12 @@
+DROP DATABASE IF EXISTS book_club;
+CREATE DATABASE book_club;
+
+USE book_club;
+
+CREATE TABLE participants(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(30) NOT NULL,
+    email VARCHAR(40) NOT NULL UNIQUE,
+    level VARCHAR(2) NOT NULL,
+    primary_skill VARCHAR(20) NOT NULL
+);
