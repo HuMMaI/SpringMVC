@@ -42,6 +42,19 @@
             <label for="participantPrimarySkill">Primary skill:</label>
             <input type="text" class="form-control" id="participantPrimarySkill" placeholder="Enter primary skill">
         </div>
+        <div class="form-group">
+            <img src="" id="participant-cover" width="200px" style="margin-bottom: .5rem;">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Upload</span>
+                </div>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="cover-file" name="file">
+                    <label class="custom-file-label" for="cover-file">Choose file</label>
+                </div>
+            </div>
+            <input type="hidden" value="" class="form-control" id="cover-id" name="coverId">
+        </div>
         <button type="submit" class="btn btn-primary" id="save-btn">Save</button>
     </form>
 </div>
@@ -60,5 +73,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <script src="${pageContext.request.contextPath}/js/participant_edit_page.js"></script>
+<script src="${pageContext.request.contextPath}/js/participant_cover_file.js"></script>
 </body>
 </html>

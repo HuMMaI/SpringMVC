@@ -73,5 +73,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <script src="${pageContext.request.contextPath}/js/add_page.js"></script>
+<script src="${pageContext.request.contextPath}/js/participant_cover_file.js"></script>
 </body>
 </html>
