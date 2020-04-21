@@ -3,13 +3,20 @@ $.get("api/home")
         var newRow = "";
 
         jQuery.each(data, function (i, item) {
+            var imgSrc = "";
+            if (item.coverId === null){
+                imgSrc = "https://increasify.com.au/wp-content/uploads/2016/08/default-image.png";
+            } else {
+                imgSrc = "/BookClub/participant-cover-files/download/" + item.coverId;
+            }
+
             newRow += "<tr>" +
                 "<td>" + item.id + "</td>" +
                 "<td>" + item.name + "</td>" +
                 "<td>" + item.email + "</td>" +
                 "<td>" + item.level + "</td>" +
                 "<td>" + item.primarySkill + "</td>" +
-                "<td>" + "<img src='/BookClub/participant-cover-files/download/" + item.coverId + "' width='50px'>" + "</td>" +
+                "<td>" + "<img src='" + imgSrc + "' width='50px'>" + "</td>" +
                 "<td>" +
                 "<button type=\"button\" class=\"btn btn-outline-warning btn-xs edit-participant\" participant-id='" + item.id + "'>" +
                 "<i class=\"fas fa-edit\" aria-hidden=\"true\"></i>" +

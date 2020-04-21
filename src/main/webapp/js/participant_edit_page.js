@@ -7,6 +7,11 @@ $.get("api/update?id=" + id)
             $("#participantEmail").val(data.email);
             $("#participantLevel").val(data.level);
             $("#participantPrimarySkill").val(data.primarySkill);
+            if (data.coverId !== null){
+                $("#participant-cover").attr("src", "/BookClub/participant-cover-files/download/" + data.coverId);
+            } else {
+                $("#participant-cover").attr("src", "https://increasify.com.au/wp-content/uploads/2016/08/default-image.png");
+            }
         } else {
             alert("Error!");
         }
