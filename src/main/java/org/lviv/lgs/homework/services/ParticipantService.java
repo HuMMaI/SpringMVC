@@ -1,6 +1,7 @@
 package org.lviv.lgs.homework.services;
 
 import org.lviv.lgs.homework.entities.Participant;
+import org.lviv.lgs.homework.repositories.ParticipantCoverFileRepository;
 import org.lviv.lgs.homework.repositories.ParticipantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,14 +12,16 @@ import java.util.Optional;
 @Service
 public class ParticipantService {
     private ParticipantRepository participantRepository;
+    private final ParticipantCoverFileRepository participantCoverFileRepository;
 
     @Autowired
-    public ParticipantService(ParticipantRepository participantRepository) {
+    public ParticipantService(ParticipantRepository participantRepository, ParticipantCoverFileRepository participantCoverFileRepository) {
         this.participantRepository = participantRepository;
+        this.participantCoverFileRepository = participantCoverFileRepository;
     }
 
-    public void save(Participant participant){
-        participantRepository.save(participant);
+    public Optional<Participant> save(Participant participant){
+        return Optional.of(participantRepository.save(participant));
     }
 
     public Participant findById(int id){
@@ -37,6 +40,7 @@ public class ParticipantService {
     }
 
     public void deleteById(int id){
+        participantRepository.getCoverIdByParticipantId(id).ifPresent(participantCoverFileRepository::deleteById);
         participantRepository.deleteById(id);
     }
 }
